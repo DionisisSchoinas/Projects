@@ -2,7 +2,7 @@ from __future__ import division
 import random
 
 def getNumbers(numbers):
-	for i in range(0,100):
+	for i in range(100):
 		numbers.append([])
 		for j in range(5):
 			while True:
