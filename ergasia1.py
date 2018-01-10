@@ -1,23 +1,16 @@
 from __future__ import division
 import random
+import time
 
-def getNumbers(numbers):
+start_time = time.time()
+def getNumbers(numbers,a):
 	for i in range(100):
-		numbers.append([])
-		for j in range(5):
-			while True:
-				x = random.randint(1,80)
-				if not(x in numbers[i]):
-					numbers[i].append(x)		
-					break
-def callNumbers(choice):
-	a=[]
-	k=[]
+		numbers.append(random.sample(a,5))		
+def callNumbers(choice,b):
+	a=b
+	k=[0]*80
 	exit=True
 	bingo=0
-	for i in range(1,81):
-		a.append(i)
-		k.append(0)
 	while exit:
 		bingo=bingo+1
 		x=random.sample(a,1)
@@ -31,8 +24,10 @@ def callNumbers(choice):
 
 bingos=0
 for i in range(1000):
+	a=range(1,81)
 	players=[]
-	getNumbers(players)
-	pulled=callNumbers(players)
+	getNumbers(players,a)
+	pulled=callNumbers(players,a)
 	bingos=bingos+pulled
 print bingos/1000
+print time.time() - start_time
