@@ -6,8 +6,7 @@ start_time = time.time()
 def getNumbers(numbers,a):
 	for i in range(100):
 		numbers.append(random.sample(a,5))		
-def callNumbers(choice,b):
-	a=b
+def callNumbers(choice,a):
 	k=[0]*80
 	exit=True
 	bingo=0
@@ -27,7 +26,6 @@ for i in range(1000):
 	a=range(1,81)
 	players=[]
 	getNumbers(players,a)
-	pulled=callNumbers(players,a)
-	bingos=bingos+pulled
+	bingos=bingos+callNumbers(players,a)
 print bingos/1000
 print time.time() - start_time
