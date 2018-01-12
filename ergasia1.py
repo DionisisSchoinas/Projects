@@ -1,8 +1,6 @@
 from __future__ import division
 import random
-import time
 
-start_time = time.time()
 def getNumbers(a):
 	numbers=[]
 	for i in range(100):
@@ -29,4 +27,3 @@ for i in range(1000):
 	players=getNumbers(a)
 	bingos=bingos+callNumbers(players,a)
 print bingos/1000
-print time.time() - start_time
