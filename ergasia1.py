@@ -16,7 +16,7 @@ def callNumbers(choice,a):
 		a.remove(x[0])
 		for i in range(0,80):
 			if x[0] in choice[i]:
-				k[i]=k[i]+1
+				k[i]+=1
 				if k[i]==5:
 					exit=False
 	return bingo
@@ -25,5 +25,5 @@ bingos=0
 for i in range(1000):
 	a=range(1,81)
 	players=getNumbers(a)
-	bingos=bingos+callNumbers(players,a)
+	bingos+=callNumbers(players,a)
 print bingos/1000
