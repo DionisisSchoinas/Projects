@@ -32,5 +32,6 @@ try:
 	enc.write(output)
 	text.close()
 	enc.close()
+	print "Text encoded"
 except:
 	print "File not found"
