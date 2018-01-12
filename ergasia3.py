@@ -19,7 +19,7 @@ try:
 			if b:
 				leto = a.index(x)
 				if leto<13:
-					letn = leto+13			
+					letn+=13			
 				else:
 					letn = -(26-leto)+13
 				value = a[letn]
