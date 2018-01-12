@@ -4,18 +4,25 @@ try:
 	text = open(in_text,"r")
 	chars = []
 	i=0
-	asci = range(ord('A'),ord('Z')+1)+range(ord('a'),ord('z')+1)
+	asci = [range(ord('A'),ord('Z')+1),range(ord('a'),ord('z')+1)]
 	for li in text:
-		for c in li:			
+		for c in li:
+			b=False			
 			chars.append(c)
 			x = ord(chars[i])
-			if x in asci:
-				leto = asci.index(x)
-				if leto<39:
+			if x in asci[0]:
+				a=list(asci[0])
+				b=True
+			elif x in asci[1]:
+				a=list(asci[1])
+				b=True
+			if b:
+				leto = a.index(x)
+				if leto<13:
 					letn = leto+13			
 				else:
-					letn = -(51-leto)+13
-				value = asci[letn]
+					letn = -(26-leto)+13
+				value = a[letn]
 				chars[i] = chr(value)
 			i=i+1
 	output = ""
