@@ -63,4 +63,9 @@ while exit1:
 		exit1 = False
 	winning_days.append(now)
 	b = b - datetime.timedelta(days=1)
-print "You could have had most wins in : "+winning_days[daily_wins.index(max(daily_wins))]
+the_day = daily_wins.index(max(daily_wins))
+if the_day == 0:
+	print "Woah you are unlucky , no wins ever"
+	print  "How ?"
+else:
+	print "You could have had most wins in : "+winning_days[the_day]
