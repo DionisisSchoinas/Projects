@@ -15,9 +15,8 @@ def findCombos(comb):
 	return f
 def Print(comb,f):
 	if comb == []:
-		print "Den uparxoun triades"
+		print "No combos found"
 	else:
-		print "bhka"
 		print f
 		for i in range(f):
 			print comb[i]
