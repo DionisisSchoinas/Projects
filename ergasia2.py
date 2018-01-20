@@ -6,15 +6,15 @@ picks = [""]*10
 for i in range(10):
 	exit = True
 	while exit:
-		x = i+1    #!!! for testing only !!!
-		#x = raw_input("Give number %s : "%(i+1))
+		#x = i+1    #!!! for testing only !!!
+		x = raw_input("Give number %s : "%(i+1))
 		try:
 			x = int(x)
 			if x in range(1,81) and not(x in picks):
 				exit = False
 				picks[i] = x
 			else:
-				print "Give each number ones"
+				print "Give a number between 1-80 and pick each number ones"
 		except:
 			print "Give a number between 1-80"
 n = datetime.datetime.now()
@@ -50,9 +50,6 @@ while b>=a:
 	winning_days.append(now)
 	b = b - datetime.timedelta(days=1)
 the_day = daily_wins.index(max(daily_wins))
-print daily_wins
-print winning_days
-print the_day
 if max(daily_wins) == 0:
 	print "Woah you are unlucky , no wins ever"
 	print  "How ?"
