@@ -2,21 +2,35 @@ import urllib2
 import json
 import datetime
 
-def Read_Picks(picks):
-	for i in range(10):
-		exit = True
-		while exit:
-			#x = i+1    #!!! for testing only !!!
-			x = raw_input("Give number %s : "%(i+1))
+def Read_Picked(picks):
+	while True:
+		x = raw_input("Give 10 different numbers in [1,80] and with spaces in between \n")
+		y = x.split(" ")
+		print y
+		if 	len(y)!=10:
+			continue
+		else:
 			try:
-				x = int(x)
-				if x in range(1,81) and not(x in picks):
-					exit = False
-					picks[i] = x
+				for i in range(len(y)):
+					picks[i] = int(y[i])
+					print picks
+					if not(picks[i] in range(1,81)):
+						print "Numbers in [1,80]"
+						int("j")
+					else:
+						k=0
+						for j in range(len(picks)):
+							if picks[j]==picks[i]:
+								k+=1
+						if k>=2:
+							print "Different numbers"
+							int("j")
+				if len(picks)==10:
+					break
 				else:
-					print "Give a number between 1-80 and pick each number ones"
+					continue
 			except:
-				print "Give a number between 1-80"
+				continue
 def Fix_Time(n):
 	cur_day = n.day
 	if n.hour in range(0,9):
@@ -51,7 +65,7 @@ def Save_Wins(b):
 
 
 picks = [""]*10
-Read_Picks(picks)
+Read_Picked(picks)
 n = datetime.datetime.now()
 day = Fix_Time(n)
 a = datetime.datetime(n.year, n.month, 1)
