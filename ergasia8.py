@@ -17,12 +17,9 @@ def Print(comb,f):
 	if comb == []:
 		print "No combos found"
 	else:
-		print f
 		for i in range(f):
 			print comb[i]
 			
-start_time = time.time()
 comb = []
 f = findCombos(comb)
 Print(comb,f)
-print time.time() - start_time
